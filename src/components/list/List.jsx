@@ -6,27 +6,15 @@ function List({ todo }) {
         <label htmlFor='toggle-all'>Mark all as complete</label>
 
         <ul className='todo-list'>
-          <li className='completed'>
-            <div className='view'>
-              <input className='toggle' type='checkbox' />
-              <label>Learn JavaScript</label>
-              <button className='destroy'></button>
-            </div>
-          </li>
-          <li>
-            <div className='view'>
-              <input className='toggle' type='checkbox' />
-              <label>Learn React</label>
-              <button className='destroy'></button>
-            </div>
-          </li>
-          <li>
-            <div className='view'>
-              <input className='toggle' type='checkbox' />
-              <label>Have a life!</label>
-              <button className='destroy'></button>
-            </div>
-          </li>
+          {todo.map((todo, e) => (
+            <li key={e}>
+              <div className='view'>
+                <input className='toggle' type='checkbox' />
+                <label>{todo}</label>
+                <button className='destroy'></button>
+              </div>
+            </li>
+          ))}
         </ul>
       </section>
     </div>

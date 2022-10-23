@@ -25,6 +25,7 @@ function Form({ todo, setTodo }) {
           className='new-todo'
           placeholder='What needs to be done?'
           autoFocus
+          autoComplete='off'
           onChange={onChangeInput}
         />
       </form>

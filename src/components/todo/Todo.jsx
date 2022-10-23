@@ -1,14 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "../form/Form";
 import List from "../list/List";
 import Button from "../button/Button";
 
 function Todo() {
   const [todo, setTodo] = useState([]);
-
-  useEffect(() => {
-    console.log(todo);
-  }, [todo]);
 
   return (
     <div>
