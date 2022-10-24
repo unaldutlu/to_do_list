@@ -1,11 +1,11 @@
 import React from "react";
 
-function Button() {
+function Button({ todo, setTodo }) {
   return (
     <div>
       <footer className='footer'>
         <span className='todo-count'>
-          <strong>2</strong>
+          <strong>{todo.length} </strong>
           items left
         </span>
 

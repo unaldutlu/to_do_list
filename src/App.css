@@ -360,6 +360,9 @@ html .clear-completed:active {
 .info a:hover {
   text-decoration: underline;
 }
+.bottom{
+  padding-bottom: 1rem;
+}
 
 /*
 	Hack to remove background from Mobile Safari.

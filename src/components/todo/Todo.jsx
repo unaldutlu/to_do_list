@@ -14,14 +14,14 @@ function Todo() {
           <Form todo={todo} setTodo={setTodo} />
         </header>
         <List todo={todo} setTodo={setTodo} />
-        <Button />
+        <Button todo={todo} setTodo={setTodo} />
       </section>
       <footer className='info'>
         <p>Click to edit a todo</p>
         <p>
           Created by <a href='https://github.com/unaldutlu'>Ünal Dutlu</a>
         </p>
-        <p>
+        <p className='bottom'>
           <a href='https://www.linkedin.com/feed/'>My Linkedin Address</a>
         </p>
       </footer>

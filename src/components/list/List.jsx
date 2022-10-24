@@ -31,7 +31,10 @@ function List({ todo, setTodo }) {
                 <label className={`${todoItem.isCompleted ? "completed" : ""}`}>
                   {todoItem.form}
                 </label>
-                <button className='destroy'></button>
+                <button
+                  className='destroy'
+                  // onClick={() => deleteButton(todoItem.id)}
+                ></button>
               </div>
             </li>
           ))}
