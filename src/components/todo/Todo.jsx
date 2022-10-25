@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Form from "../form/Form";
 import List from "../list/List";
 import Button from "../button/Button";
+import Footer from "../footer/Footer";
 
 function Todo() {
   const [todo, setTodo] = useState([]);
@@ -17,15 +18,7 @@ function Todo() {
         <List todo={todo} setTodo={setTodo} status={status} />
         <Button todo={todo} setTodo={setTodo} setStatus={setStatus} />
       </section>
-      <footer className='info'>
-        <p>Click to edit a todo</p>
-        <p>
-          Created by <a href='https://github.com/unaldutlu'>Ünal Dutlu</a>
-        </p>
-        <p className='bottom'>
-          <a href='https://www.linkedin.com/feed/'>My Linkedin Address</a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
