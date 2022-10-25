@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function List({ todo, setTodo, status }) {
   const onChangeList = (id) => {
     setTodo((todo) =>
@@ -25,6 +24,7 @@ function List({ todo, setTodo, status }) {
       return "hidden";
     }
   };
+
   return (
     <div>
       <section className='main'>

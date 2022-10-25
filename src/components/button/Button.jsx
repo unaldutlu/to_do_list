@@ -31,7 +31,7 @@ function Button({ todo, setTodo, setStatus }) {
       <footer className='footer'>
         <span className='todo-count'>
           <strong>{unCompleted.length} </strong>
-          {unCompleted.length > 1 ? " items left" : "items left"}
+          items left
         </span>
 
         <ul className='filters'>
@@ -51,9 +51,13 @@ function Button({ todo, setTodo, setStatus }) {
             </a>
           </li>
         </ul>
-        <button className='clear-completed' onClick={clearCompleted}>
-          Clear completed
-        </button>
+        {todo.length > unCompleted.length ? (
+          <button className='clear-completed' onClick={clearCompleted}>
+            Clear completed
+          </button>
+        ) : (
+          ""
+        )}
       </footer>
     </div>
   );
