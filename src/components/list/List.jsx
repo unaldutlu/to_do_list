@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function List({ todo, setTodo }) {
   const onChangeList = (id) => {
@@ -10,6 +10,10 @@ function List({ todo, setTodo }) {
           : todoItem
       )
     );
+  };
+
+  const deleteButton = (todoItem) => {
+    setTodo(todo.filter((item) => item.id !== todoItem.id));
   };
 
   return (
@@ -33,7 +37,7 @@ function List({ todo, setTodo }) {
                 </label>
                 <button
                   className='destroy'
-                  // onClick={() => deleteButton(todoItem.id)}
+                  onClick={() => deleteButton(todoItem)}
                 ></button>
               </div>
             </li>
