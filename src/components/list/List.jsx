@@ -1,7 +1,7 @@
 import React from "react";
 // import { useEffect } from "react";
 
-function List({ todo, setTodo }) {
+function List({ todo, setTodo, status }) {
   const onChangeList = (id) => {
     setTodo((todo) =>
       todo.map((todoItem) =>
@@ -16,6 +16,15 @@ function List({ todo, setTodo }) {
     setTodo(todo.filter((item) => item.id !== todoItem.id));
   };
 
+  const isComplated = (e) => {
+    if (e.isCompleted === true && status === "All") {
+      return "completed";
+    } else if (e.isCompleted === true && status === "Active") {
+      return "completed hidden";
+    } else if (e.isCompleted === false && status === "Completed") {
+      return "hidden";
+    }
+  };
   return (
     <div>
       <section className='main'>
@@ -24,7 +33,11 @@ function List({ todo, setTodo }) {
 
         <ul className='todo-list'>
           {todo.map((todoItem) => (
-            <li key={todoItem.id}>
+            <li
+              key={todoItem.id}
+              id={todoItem.id}
+              className={isComplated(todoItem)}
+            >
               <div className='view'>
                 <input
                   className='toggle'

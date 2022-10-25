@@ -13,6 +13,9 @@ function Form({ todo, setTodo }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (form === "") {
+      return false;
+    }
     setTodo([
       ...todo,
       { id: Math.random(), form: form, isEditable: false, isCompleted: false },
