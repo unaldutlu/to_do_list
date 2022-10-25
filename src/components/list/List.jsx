@@ -1,5 +1,5 @@
 import React from "react";
-// import { useEffect } from "react";
+
 
 function List({ todo, setTodo, status }) {
   const onChangeList = (id) => {
