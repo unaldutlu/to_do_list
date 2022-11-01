@@ -4,15 +4,16 @@ function List({ todo, setTodo, status }) {
   const onChangeList = (id) => {
     setTodo((todo) =>
       todo.map((todoItem) =>
-        todoItem.id === id
+        todoItem === id
           ? { ...todoItem, isCompleted: !todoItem.isCompleted }
           : todoItem
       )
     );
   };
 
-  const deleteButton = (todoItem) => {
-    setTodo(todo.filter((item) => item.id !== todoItem.id));
+
+  const deleteButton = (e) => {
+    setTodo(todo.filter((item) => item.id !== e.id));
   };
 
   const isComplated = (e) => {
@@ -25,17 +26,18 @@ function List({ todo, setTodo, status }) {
     }
   };
 
+
+
   return (
     <div>
       <section className='main'>
-        <input className='toggle-all' type='checkbox' />
+        <input className='toggle-all' type='checkbox'/>
         <label htmlFor='toggle-all'>Mark all as complete</label>
 
         <ul className='todo-list'>
           {todo.map((todoItem) => (
             <li
               key={todoItem.id}
-              id={todoItem.id}
               className={isComplated(todoItem)}
             >
               <div className='view'>
@@ -43,7 +45,7 @@ function List({ todo, setTodo, status }) {
                   className='toggle'
                   type='checkbox'
                   value={todoItem.isCompleted}
-                  onChange={() => onChangeList(todoItem.id)}
+                  onChange={() => onChangeList(todoItem)}
                 />
                 <label className={`${todoItem.isCompleted ? "completed" : ""}`}>
                   {todoItem.form}

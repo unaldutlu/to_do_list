@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 function Form({ todo, setTodo }) {
   const [form, setForm] = useState("");
-
-  useEffect(() => {
-    setForm("");
-  }, [todo]);
 
   const onChangeInput = (e) => {
     setForm(e.target.value);
@@ -20,6 +16,7 @@ function Form({ todo, setTodo }) {
       ...todo,
       { id: Math.random(), form: form, isEditable: false, isCompleted: false },
     ]);
+    setForm("");
   };
 
   return (
