@@ -1,5 +1,4 @@
 ## Project-5-To_do_list
-To_do_list
 
 Live Link:
 
